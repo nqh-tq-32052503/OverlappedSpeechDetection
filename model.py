@@ -17,7 +17,7 @@ class OSDExecutive(object):
         self.device = device
         self.pretrained_model.eval().to(self.device)
         self.inference_obj = Inference(self.pretrained_model, window="whole")
-        self.classes = ["non-speech", "#1", "#2", "#3", "#1+#2", "#1+#3", "#2+#3"]
+        self.classes = ["non-speech", "single", "single", "single", "mixed", "mixed", "mixed"]
 
     def __call__(self, audio_path):
         assert os.path.exists(audio_path), "FileNotFound: " + audio_path
