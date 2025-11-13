@@ -1,9 +1,9 @@
 docker build -t overlap-detection:cu124 .
 
-docker run --rm -p 8029:8029 --gpus all overlap-detection:cu124
+docker run -e HF_TOKEN= --rm -p 8029:8029 --gpus all overlap-detection:cu124
 
 cd .......
 
 curl -X POST "http://localhost:8029/inference" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "file=@sample.wav"
 
-nohup docker run -d --rm -p 8029:8029 --gpus all overlap-detection:cu124 > server.log 2>&1 &
+nohup docker run -d -e HF_TOKEN= --rm -p 8029:8029 --gpus all overlap-detection:cu124 > server.log 2>&1 &
