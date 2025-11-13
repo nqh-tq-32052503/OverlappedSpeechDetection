@@ -28,7 +28,8 @@ RUN pip install \
     pydantic-settings==2.11.0 \
     pydantic_core==2.33.2 \
     pyannote.audio==3.4.0 \
-    librosa==0.11.0 
+    librosa==0.11.0 \ 
+    huggingface_hub==0.36.0
 
 RUN python3 -m pip install \
         numpy \
