@@ -22,6 +22,7 @@ app.add_middleware(
 
 MODEL = None
 SAMPLE_RATE = 16000
+
 def to_jsonable(obj):
     """Recursively convert dict/list/ndarray/NumPy scalars to JSON-safe types.
        - dict keys -> str
